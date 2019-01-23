@@ -12,8 +12,8 @@ app.use('/', express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json());
 
 //loader.io verification
-app.get('/loaderio-e2218df28967e523d961008d06570745', (req, res) => {
-  res.send('loaderio-e2218df28967e523d961008d06570745')
+app.get('/loaderio-e66b933da50b0cd8041564b259309945', (req, res) => {
+  res.send('loaderio-e66b933da50b0cd8041564b259309945')
 })
 
 //carousel
