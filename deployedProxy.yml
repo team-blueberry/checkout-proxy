@@ -1,0 +1,17 @@
+
+
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+  variables:
+    productIds:
+      - ["10032", "2424235", "3575443"]
+      - ["9999999", "677544", "9836"]
+scenarios:
+  - flow:
+      - loop:
+          - get:
+              url: "/api/checkout/{{ $loopElement }}"
+        over: productIds

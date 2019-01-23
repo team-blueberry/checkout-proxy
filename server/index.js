@@ -6,8 +6,15 @@ const compression = require('compression');
 const axios = require('axios')
 
 app.use(compression());
-app.use('/:id', express.static(__dirname + '/../public/'));
+app.use('/:id(\\d+)/', express.static(__dirname + '/../public/'));
+app.use('/', express.static(__dirname + '/../react-client/dist/'));
+
 app.use(bodyParser.json());
+
+//loader.io verification
+app.get('/loaderio-e2218df28967e523d961008d06570745', (req, res) => {
+  res.send('loaderio-e2218df28967e523d961008d06570745')
+})
 
 //carousel
 const carousel = {host: 'http://34.233.106.94'
